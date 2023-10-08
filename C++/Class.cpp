@@ -1,44 +1,90 @@
-#include<iostream>
-using namespace std;
+// #include <iostream>
+// using namespace std;
+// class school
+// {
+// private:
+//     int num;
+//     float fees;
+//     char ch;
 
-class employee
+// public:
+//     int ph_no;
+//     char var;
+//     void input(int a, float b, char c);
+//     void print()
+//     {
+//         cout << "value of num is " << num << endl;
+//         cout << "value of float is " << fees << endl;
+//         cout << "value of char is " << ch << endl;
+//         cout << "value of ph_no is " << ph_no << endl;
+//         cout << "value of var is " << var << endl;
+//     }
+// };
+// void school::input(int a, float b, char c)
+// {
+//     num = a;
+//     fees = b;
+//     ch = c;
+// }
+
+// int main()
+
+// {
+//     school abc;
+//     abc.ph_no = 123;
+//     abc.var = 'H';
+//     abc.input(122, 23.98, 'j');
+//     abc.print();
+//     return 0;
+// }
+
+
+
+#include <iostream>
+using namespace std;
+class school
 {
 private:
-    int a,b,c;
+    int num;
+    float fees;
+    char ch;
+
 public:
-    int d,e;
-    void data(int ab,int bc,int cd);
-    void getdata()
+    int ph_no;
+    char var;
+    void input();
+    void print()
     {
-        cout<<"the value of a is "<<a<<endl;
-        cout<<"the value of b is "<<b<<endl;
-        cout<<"the value of c is "<<c<<endl;
-        // cout<<"enter the value of d: ";
-        // cin>>d;
-        cout<<"the value of d is "<<d<<endl;
-        // cout<<"enter the value of e: ";
-        // cin>>e;
-        cout<<"the value of e is "<<e<<endl;
+        cout << "value of num is " << num << endl;
+        cout << "value of float is " << fees << endl;
+        cout << "value of char is " << ch << endl;
+        cout << "value of ph_no is " << ph_no << endl;
+        cout << "value of var is " << var << endl;
     }
 };
-
-void employee :: data(int ab,int bc,int cd)
+void school::input()
 {
-    a=ab;
-    b=bc;
-    c=cd;
+    int a;
+    float b;
+    char c;
+    cout << "enter value of num a: ";
+    cin >> a;
+    num = a;
+    cout << "enter value of float num b: ";
+    cin >> b;
+    fees = b;
+    cout << "enter a char: ";
+    cin >> c;
+    ch = c;
 }
 
 int main()
 
 {
-    //x.d=21;//public data can be accessed
-    //x.e=123;
-    //x.a=12;//will throw error because it is a private function and cant be accessed
-    employee x;//object for class is created
-    x.data(12,13,14);
-    x.d=232;
-    x.e=23;
-    x.getdata();
+    school abc;
+    abc.ph_no = 123;
+    abc.var = 'H';
+    abc.input();
+    abc.print();
     return 0;
 }
