@@ -92,10 +92,11 @@ using namespace std;
 //     return 0;
 // }
 
-int main()
-{
-    string s;
-    getline(cin,s);
-    reverse(s.begin(),s.end());
-    cout<<s;
-}
+// int main()
+// {
+//     string s;
+//     getline(cin,s);
+//     reverse(s.begin(),s.end());
+//     cout<<s;
+// }
+

@@ -473,27 +473,262 @@ int main(){
 //     return 0;
 // }
 
-class cls{
-    public:
-    int x;
-    cls(){cout<<"default cnststr";};//default constructor
-    cls (int x)
-    {
-        this->x=x;
-        cout<<x<<" "<<this<<" ";
+// class cls{
+//     public:
+//     int x;
+//     cls(){cout<<"default cnststr";};//default constructor
+//     cls (int x)
+//     {
+//         this->x=x;
+//         cout<<x<<" "<<this<<" ";
+//     }
+//     void print()
+//     {
+//         cout<<"value of x is: "<<x<<" ";
+//     }
+// };
+// int main()
+// {
+//     cls a(10);
+//     cout<<&a;
+//     cls *b=new cls(20);//dynamic allocation
+//     b->print();
+//     cls d;
+// }
+
+
+//derived class
+
+// class Base
+// {
+//     int data1; // private by default and is not inheritable
+// public:
+//     int data2;
+//     void setData();
+//     int getData1();
+//     int getData2();
+// };
+
+// void Base ::setData(void)
+// {
+//     data1 = 10;
+//     data2 = 20;
+// }
+
+// int Base::getData1()
+// {
+//     return data1;
+// }
+
+// int Base::getData2()
+// {
+//     return data2;
+// }
+
+// class Derived : public Base
+// { // Class is being derived publically
+//     int data3;
+
+// public:
+//     void process();
+//     void display();
+// };
+
+// void Derived ::process()
+// {
+//     data3 = data2 * getData1();
+// }
+
+// void Derived ::display()
+// {
+//     cout << "Value of data 1 is " << getData1() << endl;
+//     cout << "Value of data 2 is " << data2 << endl;
+//     cout << "Value of data 3 is " << data3 << endl;
+// }
+// int main()
+// {
+//     Derived der;
+//     der.setData();
+//     der.process();
+//     der.display();
+
+//     return 0;
+// }
+/*
+
+class Base{
+    protected:
+        int a; 
+    private:
+        int b;
+
+};
+
+class Derived: protected Base{
+   
+};
+
+int main(){
+    Base b;
+    Derived d;
+    // cout<<d.a; // Will not work since a is protected in both base as well as derived class
+    return 0;
+}
+
+*/
+
+// class Student
+// {
+// protected:
+//     int roll_number;
+
+// public:
+//     void set_roll_number(int);
+//     void get_roll_number(void);
+// };
+
+// void Student ::set_roll_number(int r)
+// {
+//     roll_number = r;
+// }
+
+// void Student ::get_roll_number()
+// {
+//     cout << "The roll number is " << roll_number << endl;
+// }
+// class Exam : public Student
+// {
+// protected:
+//     float maths;
+//     float physics;
+
+// public:
+//     void set_marks(float, float);
+//     void get_marks(void);
+// };
+
+// void Exam ::set_marks(float m1, float m2)
+// {
+//     maths = m1;
+//     physics = m2;
+// }
+
+// void Exam ::get_marks()
+// {
+//     cout << "The marks obtained in maths are: " << maths << endl;
+//     cout << "The marks obtained in physics are: " << physics << endl;
+// }
+// class Result : public Exam
+// {
+//     float percentage;
+
+// public:
+//     void display_results()
+//     {
+//         get_roll_number();
+//         get_marks();
+//         cout << "Your result is " << (maths + physics) / 2 << "%" << endl;
+//     }
+// };
+// int main()
+// {
+//     Result harry;
+//     harry.set_roll_number(420);
+//     harry.set_marks(94.0, 90.0);
+//     harry.display_results();
+//     return 0;
+// }
+
+
+// class Base1{
+// protected:
+//     int base1int;
+
+// public:
+//     void set_base1int(int a)
+//     {
+//         base1int = a;
+//     }
+// };
+
+// class Base2{
+// protected:
+//     int base2int;
+
+// public:
+//     void set_base2int(int a)
+//     {
+//         base2int = a;
+//     }
+// };
+
+// class Base3{
+// protected:
+//     int base3int;
+
+// public:
+//     void set_base3int(int a)
+//     {
+//         base3int = a;
+//     }
+// };
+// class Derived : public Base1, public Base2, public Base3
+// {
+//     public: 
+//         void show(){
+//             cout << "The value of Base1 is " << base1int<<endl;
+//             cout << "The value of Base2 is " << base2int<<endl;
+//             cout << "The value of Base3 is " << base3int<<endl;
+//             cout << "The sum of these values is " << base1int + base2int + base3int << endl;
+//         }
+// };
+// int main()
+// {
+//     Derived harry;
+//     harry.set_base1int(25);
+//     harry.set_base2int(5);
+//     harry.set_base3int(15);
+//     harry.show();
+    
+//     return 0;
+// }
+
+class Item {
+private:
+    int price, no;
+public:
+    static int count;
+    void set(int x) {
+        price = x;
+        no = ++count;
     }
-    void print()
-    {
-        cout<<"value of x is: "<<x<<" ";
+
+    void get(void) {
+        cout << "Item number is: " << no << endl;
+        cout << "Price of item is: " << price << endl;
     }
 };
-int main()
-{
-    cls a(10);
-    cout<<&a;
-    cls *b=new cls(20);//dynamic allocation
-    b->print();
-    cls d;
-    
 
+int Item::count = 0;
+
+int main() {
+    int size, price;
+    cout << "Enter number of items: ";
+    cin >> size;
+
+    Item *arr = new Item[size];
+
+    for (int i = 0; i < size; i++) {
+        cout << "Enter price for item number " << Item::count + 1 << ": ";
+        cin >> price;
+        arr[i].set(price);
+    }
+
+    for (int i = 0; i < size; i++) {
+        arr[i].get();
+    }
+
+    delete[] arr; // Don't forget to release the allocated memory
+
+    return 0;
 }
