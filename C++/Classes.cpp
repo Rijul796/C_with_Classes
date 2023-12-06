@@ -693,6 +693,286 @@ int main(){
 //     return 0;
 // }
 
+
+// #include <iostream>
+// using namespace std;
+
+// class Animal {
+// public:
+//     int legs;
+// };
+
+// class Mammal : virtual public Animal {
+// public:
+//     Mammal() {
+//         legs = 4;
+//     }
+// };
+
+// class Bird : virtual public Animal {
+// public:
+//     Bird() {
+//         legs = 2;
+//     }
+// };
+
+// class Bat : public Mammal, public Bird {// the function from the last class will be called i.e bird's 
+// public:
+//     void showLegs() {
+//         cout << "Legs: " << legs << endl;
+//     }
+// };
+
+// int main() {
+//     Bat bat;
+//     bat.showLegs();
+//     return 0;
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// public:
+//     void display() {
+//         cout << "Display from Base" << endl;
+//     }
+// };
+
+// class Derived : public Base {
+// public:
+//     void display() {
+//         cout << "Display from Derived" << endl;
+//     }
+// };
+
+// int main() {
+//     Base baseObj;
+//     Derived derivedObj;
+
+//     Base* ptr;
+
+//     ptr = &baseObj;
+//     ptr->display(); // Calls Base's display() - Early Binding
+
+//     ptr = &derivedObj;
+//     ptr->display(); // Calls Base's display() - Early Binding
+
+//     Derived* pt;
+//     pt=&derivedObj;
+//     pt->display();
+
+//     return 0;
+//     /*both calls to ptr->display() result in calling the display() function from the Base class,
+//      even when ptr points to an object of the Derived class. 
+//      This is because the function is resolved based on the pointer's type, not the actual object type.*/
+// }
+
+// #include <iostream>
+// using namespace std;
+
+// class Base {
+// public:
+//     virtual void display() {
+//         cout << "Display from Base" << endl;
+//     }
+// };
+
+// class Derived : public Base {
+// public:
+//     void display() override {
+//         cout << "Display from Derived" << endl;
+//     }
+// };
+
+// int main() {
+//     Base baseObj;
+//     Derived derivedObj;
+
+//     Base* ptr;
+
+//     ptr = &baseObj;
+//     ptr->display(); // Calls Base's display() - Late Binding
+
+//     ptr = &derivedObj;
+//     ptr->display(); // Calls Derived's display() - Late Binding
+
+//     Derived* ptr1;
+//     ptr1=&derivedObj;
+//     ptr1->display();
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// // Base class
+// class Shape {
+// public:
+//     // Virtual function
+//     virtual void draw() {
+//         cout << "Drawing a shape." << endl;
+//     }
+// };
+
+// // Derived class 1
+// class Circle : public Shape {
+// public:
+//     // Override the virtual function
+//     void draw() override {
+//         cout << "Drawing a circle." << endl;
+//     }
+// };
+
+// // Derived class 2
+// class Square : public Shape {
+// public:
+//     // Override the virtual function
+//     void draw() override {
+//         cout << "Drawing a square." << endl;
+//     }
+// };
+
+// int main() {
+//     // Create objects of base and derived classes
+//     Shape shapeObj;
+//     Circle circleObj;
+//     Square squareObj;
+
+//     // Use the objects and call the virtual function
+//     // shapeObj.draw();   // Calls the base class implementation
+//     // circleObj.draw();  // Calls the overridden function in Circle class
+//     // squareObj.draw();  // Calls the overridden function in Square class
+
+//     // Using pointers to the base class
+//     Shape* shapePtr;
+
+//     shapePtr = &shapeObj;
+//     shapePtr->draw();   // Calls the base class implementation
+
+//     shapePtr = &circleObj;
+//     shapePtr->draw();   // Calls the overridden function in Circle class
+
+//     shapePtr = &squareObj;
+//     shapePtr->draw();   // Calls the overridden function in Square class
+
+//     return 0;
+// }
+
+
+
+// #include <iostream>
+// using namespace std;
+
+// // Abstract base class
+// class Shape {
+// public:
+//     // Pure virtual function
+//     virtual void draw() = 0;
+
+//     // Normal function
+//     void display() {
+//         cout << "Displaying shape." << endl;
+//     }
+
+//     // Pure virtual function
+//     virtual double area() const = 0;
+// };
+
+// // Derived class 1
+// class Circle : public Shape {
+// private:
+//     double radius;
+
+// public:
+//     Circle(double r) : radius(r) {}
+
+//     // Implementing the pure virtual function
+//     void draw() override {
+//         cout << "Drawing a circle." << endl;
+//     }
+
+//     // Implementing the pure virtual function
+//     double area() const override {
+//         return 3.14159 * radius * radius;
+//     }
+// };
+
+// // Derived class 2
+// class Square : public Shape {
+// private:
+//     double side;
+
+// public:
+//     Square(double s) : side(s) {}
+
+//     // Implementing the pure virtual function
+//     void draw() override {
+//         cout << "Drawing a square." << endl;
+//     }
+
+//     // Implementing the pure virtual function
+//     double area() const override {
+//         return side * side;
+//     }
+// };
+
+// int main() {
+//     // Shape shapeObj; // This line will cause a compilation error because Shape is an abstract class
+
+//     Circle circleObj(5.0);
+//     Square squareObj(4.0);
+
+//     circleObj.draw();   // Calls the draw() function in Circle class
+//     squareObj.draw();   // Calls the draw() function in Square class
+
+//     cout << "Area of circle: " << circleObj.area() << endl;
+//     cout << "Area of square: " << squareObj.area() << endl;
+
+//     circleObj.display();   // Calls the display() function from the base class
+
+//     return 0;
+// }
+
+
+// #include <iostream>
+// using namespace std;
+
+// // Base class
+// class Base {
+// public:
+//     Base() {
+//         cout << "Base constructor" << endl;
+//     }
+
+//     virtual ~Base() {
+//         cout << "Base destructor" << endl;
+//     }
+// };
+
+// // Derived class
+// class Derived : public Base {
+// public:
+//     Derived() {
+//         cout << "Derived constructor" << endl;
+//     }
+
+//     ~Derived() {
+//         cout << "Derived destructor" << endl;
+//     }
+// };
+
+// int main() {
+//     Base* basePtr = new Derived(); // Pointer to a Derived object through a Base pointer
+//     delete basePtr; // Deleting the object using a pointer to the Base class
+
+//     return 0;
+// }
+
+
+
 class Item {
 private:
     int price, no;

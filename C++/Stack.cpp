@@ -53,3 +53,29 @@ using namespace std;
 //     }
 //     return 0;
 // }
+
+// int main() {
+//   stack<int> st;
+//   int arr[100];
+//   int size;
+
+//   cout << "enter size of array: ";
+//   cin >> size;
+
+//   for (int i = 0; i < size; i++) {
+//     cout << "enter element: ";
+//     cin >> arr[i];
+//     st.push(arr[i]);
+//   }
+
+//   for (int i = 0; i < size; i++) {
+//     arr[i] = st.top(); // Copy element from stack to array
+//     st.pop(); // Remove element from stack
+//   }
+
+//   for (int i = 0; i < size; i++) {
+//     cout << arr[i] << " ";
+//   }
+
+//   return 0;
+// }

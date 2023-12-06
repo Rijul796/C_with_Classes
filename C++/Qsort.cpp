@@ -13,15 +13,9 @@ int compare(const void *a,const void *b)
     {
         return 1;
     }
-    else
-    {
-        return 0;
-    }
-    
+    else{return 0;}
 }
-
 int main()
-
 {
     int length;
     cout<<"enter length of array: ";
@@ -38,6 +32,5 @@ int main()
     {
         cout<<arr[i]<<endl;
     }
-    
     return 0;
 }
