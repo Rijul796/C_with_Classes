@@ -11,7 +11,7 @@ using namespace std;
 //     b = y;
 //   }
 
-//   chr(const chr& other) {
+//   chr(const chr& other) {    //copy constructor
 //     a = other.a;
 //     b = other.b;
 //   }

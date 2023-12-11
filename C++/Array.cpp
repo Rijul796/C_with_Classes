@@ -222,7 +222,7 @@ int main()
         arr.push_back(x);
     }
 
-    arr.pop_back();
+    arr.pop_back(); 
     for(int i:arr)cout<<i<<" ";
 
     return 0;

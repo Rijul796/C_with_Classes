@@ -17,23 +17,23 @@ using namespace std;
 //     return 0;
 // }
 
-// int main()
-// {
-//     int n;
-//     cin>>n;
-//     map<int,int>m1;
-//     int arr[n];
-//     for (int i = 0; i < n; i++)
-//     {
-//         cin>>arr[i];
-//     }
-//     for (int i = 0; i < n; i++)
-//     {
-//         m1[arr[i]]++;
-//     }
-//     for(auto i:m1)
-//     {
-//         cout<<i.first<<" "<<i.second<<endl;
-//     }
-//     return 0;
-// }
+int main()
+{
+    int n;
+    cin>>n;
+    map<int,int>m1;
+    int arr[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin>>arr[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        m1[arr[i]]++;
+    }
+    for(auto i:m1)
+    {
+        cout<<i.first<<" "<<i.second<<endl;
+    }
+    return 0;
+}

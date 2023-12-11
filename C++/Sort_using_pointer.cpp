@@ -26,7 +26,7 @@ int main()
 {
 	int n =5;
 	int arr[] = { 0, 23, 14, 12, 9 };
-    // n=sizeof(arr)/sizeof(arr[0]);
+    // n=sizeof(arr)/sizeof(arr[0]);//use algo arr.size();
 	sort(n, arr);
 	return 0;
 }

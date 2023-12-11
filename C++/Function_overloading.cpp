@@ -33,5 +33,5 @@ int  main()
     int x;
     cout<<"enter the value of x: ";
     cin>>x;
-    cout<<"sum of first "<<x<<" netural numbers to n is: "<<sum_n(x);
+    cout<<"sum of first "<<x<<" natural numbers to n is: "<<sum_n(x);
 }
